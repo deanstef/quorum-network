@@ -1,3 +1,4 @@
+
 # The following environment variables are substituted if present
 # * QUORUM_CONSENSUS: default to istanbul
 # * QUORUM_DOCKER_IMAGE: default to quorumengineering/quorum:2.6.0
@@ -426,6 +427,20 @@ services:
     environment:
       - PRIVATE_CONFIG=${PRIVATE_CONFIG:-/qdata/tm/tm.ipc}
       - NODE_ID=7
+  node8:
+    << : *quorum-def
+    hostname: node8
+    ports:
+      - "22007:8545"
+    volumes:
+      - vol8:/qdata
+      - ./resources:/resources:ro
+    environment:
+      - PRIVATE_CONFIG=${PRIVATE_CONFIG:-/qdata/tm/tm.ipc}
+      - NODE_ID=8
+    networks:
+      quorum-examples-net:
+        ipv4_address: 172.16.239.18
 networks:
   quorum-examples-net:
     name: quorum-examples-net
@@ -442,3 +457,4 @@ volumes:
   "vol5":
   "vol6":
   "vol7":
+  "vol8":

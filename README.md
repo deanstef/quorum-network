@@ -6,7 +6,8 @@ It is based on the [7nodes](https://github.com/jpmorganchase/quorum-examples) ex
 * *Clique*
 * Istanbul
 
-With this example one can start up a fully-functioning Quorum Ethereum private network consisting of 7 indipendent Quorum nodes. Each node runs in a single docker container abd exposes RPC APIs and a Geth console for testing different consensus, privacy, and all the expected functionality of an Ethereum platform. Additionally to its original version, this example enables the user to easily setup a quorum network running with the `clique` consensus protocol. 
+With this example one can start up a fully-functioning Quorum Ethereum private network consisting of 8 indipendent Quorum nodes. Each node runs in a single docker container abd exposes RPC APIs and a Geth console for testing different consensus, privacy, and all the expected functionality of an Ethereum platform. Additionally to its original version, this example enables the user to easily setup a quorum network running with the `clique` consensus protocol. 
+By default the example runs also 7 Tx Manager nodes for privacy futures - the node 8 does not have this functionality. Tessera's privacy nodes can be easily disabled as shown below.
 
 ## Run the example
 1. Make sure you have `<docker-compose>` installed. If not you can follow [this](https://docs.docker.com/compose/install/) to install Docker Compose,
